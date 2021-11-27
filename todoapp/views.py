@@ -4,7 +4,7 @@ from django import forms
 from django.urls import reverse
 
 
-task = ['foo', 'bar', 'baz']
+task = []
 
 class NewTextForm(forms.Form):
     tasks = forms.CharField(label="New Task:")
@@ -17,6 +17,7 @@ def index(request):
             tasks = form.cleaned_data["tasks"]
             task.append(tasks)
             return HttpResponseRedirect(reverse("todoapp:index"))
+
     return render(request, "todoapp/index.html", {
         'tasks' : task,
         'form' : NewTextForm(),
