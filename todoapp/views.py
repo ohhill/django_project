@@ -10,6 +10,13 @@ class NewTextForm(forms.Form):
     tasks = forms.CharField(label="New Task:")
 
 def index(request):
+    if request.method == "POST":
+        form = NewTextForm(request.POST)
+
+        if form.is_valid():
+            tasks = form.cleaned_data["tasks"]
+            task.append(tasks)
+            return HttpResponseRedirect(reverse("todoapp:index"))
     return render(request, "todoapp/index.html", {
         'tasks' : task,
         'form' : NewTextForm(),
