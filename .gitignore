@@ -4,4 +4,4 @@
 /todoapp/__pycache__/*
 /todoapp/migrations/__pycache__/*
 __pycache__/
-
+todo/__pycache__/
