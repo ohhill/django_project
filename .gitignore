@@ -3,4 +3,5 @@
 /__pycache__/*
 /todoapp/__pycache__/*
 /todoapp/migrations/__pycache__/*
-/todo/__pycache__/*
+__pycache__/
+
