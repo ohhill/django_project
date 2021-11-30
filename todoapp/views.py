@@ -6,8 +6,10 @@ from django.urls import reverse
 
 task = []
 
+
 class NewTextForm(forms.Form):
     tasks = forms.CharField(label="New Task:")
+
 
 def index(request):
     if request.method == "POST":
@@ -19,6 +21,6 @@ def index(request):
             return HttpResponseRedirect(reverse("todoapp:index"))
 
     return render(request, "todoapp/index.html", {
-        'tasks' : task,
-        'form' : NewTextForm(),
+        'tasks': task,
+        'form': NewTextForm(),
     })
